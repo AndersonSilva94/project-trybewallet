@@ -36,11 +36,11 @@ class Forms extends Component {
   dispatchInfos(event) {
     // 0 - chamar o event.preventDefault()
     event.preventDefault();
-    // 1 - chamar as propriedades do estado local
+    // 1 - chamar as propriedades do estado global
     const { expenses, getCurrencies } = this.props;
     // 2 - setar o id
     const id = expenses.length;
-    // nesse momento chamar a props q vai despachar os valores
+    // 3 - nesse momento chamar a props q vai despachar os valores
     getCurrencies({ ...this.state, id });
   }
 
@@ -49,12 +49,29 @@ class Forms extends Component {
     return (
       <div>
         <form>
-          <InputValue propValue={ value } onChange={ this.handleChange } />
-          <InputDescription propValue={ description } onChange={ this.handleChange } />
-          <InputCurrencies propValue={ currency } onChange={ this.handleChange } />
-          <InputPayment propValue={ method } onChange={ this.handleChange } />
-          <InputCategory propValue={ tag } onChange={ this.handleChange } />
-          <button type="submit" onClick={ this.dispatchInfos }>Adicionar despesa</button>
+          <InputValue
+            propValue={ value }
+            onChange={ this.handleChange }
+          />
+          <InputDescription
+            propValue={ description }
+            onChange={ this.handleChange }
+          />
+          <InputCurrencies
+            propValue={ currency }
+            onChange={ this.handleChange }
+          />
+          <InputPayment
+            propValue={ method }
+            onChange={ this.handleChange }
+          />
+          <InputCategory
+            propValue={ tag }
+            onChange={ this.handleChange }
+          />
+          <button type="submit" onClick={ this.dispatchInfos }>
+            Adicionar despesa
+          </button>
         </form>
       </div>
     );

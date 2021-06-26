@@ -10,18 +10,8 @@ class InputCurrencies extends Component {
     console.log('componentDidMount foi renderizado');
   }
 
-  /* componentDidUpdate() {
-    const { getCurrencies } = this.props;
-    getCurrencies();
-    console.log('componentDidUpdate foi renderizado');
-    console.log('SE VOCÊ TEM AMOR PELO SEU NOTE, NÃO USE ISSO!!!!!')
-  } */
-
   render() {
     const { currencies, propValue, onChange } = this.props;
-    console.log(currencies);
-    // currencies.splice(1, 1);
-    /* console.log(currencies); */
     return (
       <label htmlFor="moedas">
         Moeda

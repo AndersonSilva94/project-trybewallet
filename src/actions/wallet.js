@@ -14,15 +14,6 @@ export const getCurrenciesAPISuccess = (payload) => ({
   payload,
 });
 
-export const getCurrenciesAPI2 = () => ({
-  type: GET_EXPENSES,
-});
-
-export const getCurrenciesAPISuccess2 = (payload) => ({
-  type: GET_EXPENSES_SUCCESS,
-  payload,
-});
-
 export const getCurrenciesAPIThunk = () => (dispatch) => {
   dispatch(getCurrenciesAPI());
   getAPI()
@@ -32,6 +23,15 @@ export const getCurrenciesAPIThunk = () => (dispatch) => {
       dispatch(getCurrenciesAPISuccess(valuesAPI));
     });
 };
+
+export const getCurrenciesAPI2 = () => ({
+  type: GET_EXPENSES,
+});
+
+export const getCurrenciesAPISuccess2 = (payload) => ({
+  type: GET_EXPENSES_SUCCESS,
+  payload,
+});
 
 export const getCurrenciesAPIThunk2 = (expense) => (dispatch) => {
   dispatch(getCurrenciesAPI2());
